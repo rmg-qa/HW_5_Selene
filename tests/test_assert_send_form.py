@@ -1,6 +1,4 @@
 import os
-
-
 from selene import browser, have
 
 
@@ -21,7 +19,7 @@ def test_send_form(browser_settings):
     browser.element('.//div[@id="react-select-2-option-0"]').click()  #Subjects
     browser.element(".//div[contains(@class, 'multiValue')]//child::div[1]")
     browser.element('[for="hobbies-checkbox-1"]').click()
-    browser.element('.//input[@class="form-control-file"]').type(os.path.abspath('tests/qa-guru.jpg'))  # Picture.
+    browser.element('.//input[@class="form-control-file"]').type(os.path.abspath('qa-guru.jpg'))  # Picture.
     browser.element('[id="currentAddress"]').type('Кемерово, ул. Советсткая, д.6')
     browser.element('[id="state"]').click()  #State
     browser.element('[id="react-select-3-option-0"]').click()  #State

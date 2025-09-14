@@ -17,10 +17,10 @@ def test_send_form(browser_settings):
     browser.element('[class="react-datepicker__day react-datepicker__day--001"]').click()  #Datapicker
     browser.element('[id="dateOfBirthInput"]').should(have.value('01 Oct 1996'))  #assert Datapicker
     browser.element('[id="subjectsInput"]').type('math')  #Subjects
-    browser.element('.//div[@id="react-select-2-option-0"]').click()  #Subjects
+    browser.element('[id="react-select-2-option-0"]').click()  #Subjects
     browser.element(".//div[contains(@class, 'multiValue')]//child::div[1]").should(have.text('Maths'))  #assert Subjects
     browser.element('[for="hobbies-checkbox-1"]').click().should(be.clickable)  # Hobbies. Проверку можно выполнить только через execute_script. Фронт никак не отображает в DOM активное св-во этого элемента. Сделал проверку на кликабельность.
-    browser.element('.//input[@class="form-control-file"]').type(os.path.abspath('tests/qa-guru.jpg'))  # Picture. Проверку можно выполнить только через execute_script. Фронт никак не отображает в DOM активное св-во этого элемента
+    browser.element('.//input[@class="form-control-file"]').type(os.path.abspath('qa-guru.jpg'))  # Picture. Проверку можно выполнить только через execute_script. Фронт никак не отображает в DOM активное св-во этого элемента
     browser.element('[id="currentAddress"]').type('Кемерово, ул. Советсткая, д.6').should(have.value('Кемерово, ул. Советсткая, д.6'))  #Current Address + assert
     browser.element('[id="state"]').click()  #State
     browser.element('[id="react-select-3-option-0"]').click()  #State
